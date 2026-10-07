@@ -166,3 +166,208 @@ tbody tr:hover { background: #f7fbfb; }
   .floating-ai { width: 43px; height: 43px; right: 14px; bottom: 16px; font-size: 37px; }
   .table-footer { align-items: flex-start; flex-direction: column; }
 }
+/* EDABIP exact sidebar assets */
+
+.brand-logo {
+    width: 78px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+}
+
+.ai-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* =====================================================
+   EDABIP SIDEBAR - FIGMA MATCH
+   ===================================================== */
+
+.sidebar {
+    width: 175px;
+    background: #124f4f;
+    color: #ffffff;
+}
+
+/* EDABIP brand */
+.sidebar .brand {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 18px;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.sidebar .brand-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.sidebar .brand b {
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Navigation */
+.sidebar nav {
+    margin-top: 25px;
+}
+
+.sidebar nav a {
+    height: 65px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Navigation icons */
+.sidebar nav a .nav-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Hover */
+.sidebar nav a:hover {
+    color: #ffffff !important;
+    background: #246967;
+}
+
+/* Active Settings */
+.sidebar nav a.active {
+    color: #ffffff !important;
+    background: #246967;
+    border-left: 5px solid #f4d35e;
+}
+
+/* AI Assistant */
+.sidebar .ai-card {
+    color: #ffffff;
+}
+
+.sidebar .ai-title {
+    color: #ffffff;
+}
+
+.sidebar .ai-title b {
+    color: #ffffff;
+}
+
+.sidebar .ai-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    display: block;
+}
+
+/* AI Assistant description */
+.sidebar .ai-card small {
+    color: #ffffff;
+}
+/* =====================================================
+   AI ASSISTANT PANEL - FIGMA MATCH
+   ===================================================== */
+
+.sidebar .ai-card {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 24px;
+
+    background: #45a5a3;
+    border-radius: 7px;
+
+    padding: 14px 12px;
+
+    color: #ffffff;
+}
+
+/* AI icon + text */
+.sidebar .ai-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Robot icon */
+.sidebar .ai-icon {
+    width: 46px;
+    height: 46px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* AI Assistant heading */
+.sidebar .ai-title b {
+    display: block;
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+/* Description */
+.sidebar .ai-title small {
+    display: block;
+
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1.3;
+}
+
+/* Ask AI button */
+.sidebar .ai-card button {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 9px 10px;
+
+    background: #124f4f;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Button hover */
+.sidebar .ai-card button:hover {
+    background: #0e4242;
+}

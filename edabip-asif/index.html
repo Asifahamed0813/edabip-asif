@@ -11,26 +11,86 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#" aria-label="EDABIP home">
-        <span class="brand-mark" aria-hidden="true">∿</span><span>EDABIP</span>
-      </a>
-      <button class="sidebar-collapse" id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar">◧</button>
-      <nav class="nav-menu" aria-label="Main navigation">
-        <a href="#"><span class="nav-icon">▦</span><span>Dashboard</span></a>
-        <a href="#"><span class="nav-icon">▥</span><span>Power BI</span></a>
-        <a href="#"><span class="nav-icon">☼</span><span>Tableau</span></a>
-        <a href="#"><span class="nav-icon">◷</span><span>Analytics</span></a>
-        <a href="#"><span class="nav-icon">▤</span><span>Report</span></a>
-        <a href="#"><span class="nav-icon">▣</span><span>Billing</span></a>
-        <a href="#"><span class="nav-icon">♧</span><span>Users</span></a>
-        <a class="active" href="#" aria-current="page"><span class="nav-icon">⚙</span><span>Settings</span></a>
-        <a href="#"><span class="nav-icon">⇥</span><span>Logout</span></a>
-      </nav>
-      <section class="assistant-card" aria-label="AI Assistant">
-        <div class="assistant-heading"><span class="robot">▣</span><div><strong>AI Assistant</strong><small>Your Intelligent Companion</small></div></div>
-        <button class="btn btn-dark ask-ai" id="askAi">Ask AI</button>
-      </section>
-    </aside>
+
+  <!-- EDABIP LOGO -->
+  <a class="brand" href="#">
+    <img src="assets/brand-logo.png" alt="EDABIP Logo" class="brand-logo">
+    <b>EDABIP</b>
+  </a>
+
+  <!-- SIDEBAR COLLAPSE BUTTON -->
+  <button class="collapse" id="sidebarToggle" aria-label="Toggle sidebar">
+    ◧
+  </button>
+
+  <!-- SIDEBAR NAVIGATION -->
+  <nav aria-label="Main navigation">
+
+    <a href="#">
+      <img src="assets/dashboard-icon.png" alt="" class="nav-icon">
+      <span>Dashboard</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/powerbi-icon.png" alt="" class="nav-icon">
+      <span>Power BI</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/tableau-icon.png" alt="" class="nav-icon">
+      <span>Tableau</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/analytics-icon.png" alt="" class="nav-icon">
+      <span>Analytics</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/report-icon.png" alt="" class="nav-icon">
+      <span>Report</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/billing-icon.png" alt="" class="nav-icon">
+      <span>Billing</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/users-icon.png" alt="" class="nav-icon">
+      <span>Users</span>
+    </a>
+
+    <a class="active" href="#" aria-current="page">
+      <img src="assets/settings-icon.png" alt="" class="nav-icon">
+      <span>Settings</span>
+    </a>
+
+    <a href="#">
+      <img src="assets/logout-icon.png" alt="" class="nav-icon">
+      <span>Logout</span>
+    </a>
+
+  </nav>
+
+  <!-- AI ASSISTANT -->
+  <div class="ai-card">
+
+    <div class="ai-title">
+        <img src="assets/ai-icon.png" alt="" class="ai-icon">
+
+        <div>
+            <b>AI Assistant</b>
+            <small>Your Intelligent Companion</small>
+        </div>
+    </div>
+
+    <button id="askAi">Ask AI</button>
+
+</div>
+
+</aside>
+
 
     <div class="main-area">
       <header class="topbar">
