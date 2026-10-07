@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EDABIP settings dashboard">
+  <title>EDABIP | Settings</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="logo">∿</span><b>EDABIP</b></a>
+    <button class="collapse" id="sidebarToggle" aria-label="Toggle sidebar">◧</button>
+    <nav aria-label="Main navigation">
+      <a href="#">▦ <span>Dashboard</span></a><a href="#">▥ <span>Power BI</span></a>
+      <a href="#">☼ <span>Tableau</span></a><a href="#">◷ <span>Analytics</span></a>
+      <a href="#">▤ <span>Report</span></a><a href="#">▣ <span>Billing</span></a>
+      <a href="#">♧ <span>Users</span></a><a class="active" href="#" aria-current="page">⚙ <span>Settings</span></a>
+      <a href="#">⇥ <span>Logout</span></a>
+    </nav>
+    <div class="ai-card"><div class="ai-title">▣ <b>AI Assistant</b></div><small>Your Intelligent Companion</small><button id="askAi">Ask AI</button></div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search" aria-label="Search"><button id="clearSearch" type="button">×</button></label>
+      <div class="top-icons"><button id="bell" aria-label="Notifications">♧</button><button class="avatar" id="profile" aria-label="Profile">∿</button></div>
+    </header>
+
+    <main>
+      <h1>Setting</h1>
+      <section class="welcome card"><div><h2>Welcome Back, Alin!</h2><p>Stay Organised with real time insight, Monitor Your Business Performance and key Metrics.</p></div><span class="live">● Real Time</span></section>
+
+      <section class="card section searchable" data-keywords="general settings first name last name email mobile timezone company size industry">
+        <button class="section-head" data-target="general" aria-expanded="true"><span><b>General Settings</b><small>Configure general application settings.</small></span><i>⌄</i></button>
+        <div id="general" class="section-body">
+          <form id="generalForm"><div class="grid">
+            <label>First Name<input required name="firstName" placeholder="Enter Your First Name"></label>
+            <label>Last Name<input required name="lastName" placeholder="Enter Your Last Name"></label>
+            <label>Email<input required name="email" type="email" placeholder="Enter Your Email"></label>
+            <label>Mobile Number<input name="mobile" type="tel" placeholder="Enter Your Number"></label>
+            <label>Application Name<input name="application" value="EDABIP"></label>
+            <label>Timezone<select><option>UTC(Coordinated Universal Time)</option><option>Asia/Kolkata (IST)</option><option>Asia/Dubai</option></select></label>
+            <label>Company Size<select><option>Company Size</option><option>1–10</option><option>11–50</option><option>51–200</option><option>201–1000</option></select></label>
+            <label>Industry<select><option>Industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option></select></label>
+            <div class="toggle-field"><span>Enable Email Notification</span><label class="switch"><input type="checkbox" checked><span></span><em>ON</em></label></div>
+          </div><div class="actions"><button class="primary">Save Changes</button></div></form>
+        </div>
+      </section>
+
+      <section class="card section searchable" data-keywords="notification preferences dashboard alerts report updates sms">
+        <button class="section-head" data-target="notifications" aria-expanded="true"><span><b>Notification Preferences</b><small>Configure how and when you receive notifications.</small></span><i>⌄</i></button>
+        <div id="notifications" class="section-body"><form id="notificationForm"><div class="grid notification-grid">
+          <label>Dashboard Alerts<select><option>All Alerts</option><option>Important Only</option><option>None</option></select></label>
+          <label>Report Updates<select><option>Daily</option><option>Weekly</option><option>Monthly</option></select></label>
+          <div class="toggle-field"><span>Enable SMS Notification</span><label class="switch"><input type="checkbox" checked><span></span><em>ON</em></label></div>
+        </div><div class="actions"><button class="primary">Update Preferences</button></div></form></div>
+      </section>
+
+      <div class="two-col">
+        <section class="card searchable" data-keywords="integrations salesforce google analytics stack microsoft teams">
+          <h2>Integrations</h2><p class="sub">Connect and manage third-party integrations.</p>
+          <div class="table-wrap"><table><thead><tr><th>Integration</th><th>Status</th><th>Action</th></tr></thead><tbody id="integrationRows"></tbody></table></div>
+        </section>
+        <section class="card searchable" data-keywords="security password two factor authentication 2fa">
+          <h2>Security</h2><p class="sub">Manage security settings for your organization.</p>
+          <form id="securityForm"><label>Change Password<div class="password"><input id="password" type="password" value="StrongPassword123!" minlength="8"><button type="button" id="showPassword">Show</button><button class="primary">Change Password</button></div></label>
+          <div class="security-2fa"><span>Two-Factor Authentication (2FA)</span><label class="switch"><input type="checkbox" checked><span></span><em>ON</em></label></div>
+          <div class="actions"><button class="primary">Save Security Settings</button></div></form>
+        </section>
+      </div>
+
+      <section class="card section searchable" data-keywords="role permissions admin business analyst editor viewer">
+        <button class="section-head" data-target="roles" aria-expanded="true"><span><b>Role &amp; Permissions</b><small>Manage roles and permissions for your organization.</small></span><i>⌄</i></button>
+        <div id="roles" class="section-body"><div class="tabs"><button class="tab active" data-tab="roles">Roles Overview</button><button class="tab" data-tab="matrix">Permission Matrix</button></div>
+        <div class="table-wrap"><table><thead id="roleHead"></thead><tbody id="roleRows"></tbody></table></div><div class="table-footer"><span id="pageInfo"></span><div id="pagination"></div></div></div>
+      </section>
+
+      <footer>© 2026 EDABIP. All rights reserved. Enterprise Data Analytics &amp; Business Intelligence Platform <span>Privacy Policy · Terms · Help &amp; Support &nbsp; v2.1.0</span></footer>
+    </main>
+  </div>
+  <button class="floating-ai" id="floatingAi" aria-label="Ask AI">∿</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+</body>
+</html>
