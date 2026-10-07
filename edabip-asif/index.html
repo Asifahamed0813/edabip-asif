@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EDABIP settings dashboard demo built with HTML, CSS and JavaScript.">
+  <title>EDABIP | Settings</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="EDABIP home">
+        <span class="brand-mark" aria-hidden="true">∿</span><span>EDABIP</span>
+      </a>
+      <button class="sidebar-collapse" id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar">◧</button>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#"><span class="nav-icon">▦</span><span>Dashboard</span></a>
+        <a href="#"><span class="nav-icon">▥</span><span>Power BI</span></a>
+        <a href="#"><span class="nav-icon">☼</span><span>Tableau</span></a>
+        <a href="#"><span class="nav-icon">◷</span><span>Analytics</span></a>
+        <a href="#"><span class="nav-icon">▤</span><span>Report</span></a>
+        <a href="#"><span class="nav-icon">▣</span><span>Billing</span></a>
+        <a href="#"><span class="nav-icon">♧</span><span>Users</span></a>
+        <a class="active" href="#" aria-current="page"><span class="nav-icon">⚙</span><span>Settings</span></a>
+        <a href="#"><span class="nav-icon">⇥</span><span>Logout</span></a>
+      </nav>
+      <section class="assistant-card" aria-label="AI Assistant">
+        <div class="assistant-heading"><span class="robot">▣</span><div><strong>AI Assistant</strong><small>Your Intelligent Companion</small></div></div>
+        <button class="btn btn-dark ask-ai" id="askAi">Ask AI</button>
+      </section>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="Search" aria-label="Search settings"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label>
+        <div class="top-actions"><button class="icon-button" id="notificationsBtn" aria-label="Notifications" title="Notifications">♧<span class="notification-dot"></span></button><button class="avatar" id="profileBtn" aria-label="Open profile menu">∿</button></div>
+      </header>
+
+      <main class="content">
+        <h1>Setting</h1>
+        <section class="welcome panel">
+          <div><h2>Welcome Back, Alin!</h2><p>Stay Organised with real time insight, Monitor Your Business Performance and key Metrics.</p></div>
+          <span class="live-pill"><span></span> Real Time</span>
+        </section>
+
+        <section class="panel settings-panel searchable" data-search="general settings first name last name email mobile number application name timezone company size industry email notification">
+          <button class="section-heading" data-collapse="generalBody" aria-expanded="true"><span><strong>General Settings</strong><small>Configure general application settings.</small></span><span class="chevron">⌄</span></button>
+          <div id="generalBody" class="section-body">
+            <form id="generalForm">
+              <div class="form-grid">
+                <label>First Name<input name="firstName" type="text" placeholder="Enter Your First Name" required></label>
+                <label>Last Name<input name="lastName" type="text" placeholder="Enter Your Last Name" required></label>
+                <label>Email<input name="email" type="email" placeholder="Enter Your Email" required></label>
+                <label>Mobile Number<input name="mobile" type="tel" inputmode="tel" placeholder="Enter Your Number" pattern="[0-9+() -]{7,}" title="Enter a valid phone number"></label>
+                <label>Application Name<input name="appName" type="text" value="EDABIP"></label>
+                <label>Timezone<select name="timezone"><option>UTC(Coordinated Universal Time)</option><option>Asia/Kolkata (IST)</option><option>Europe/London</option><option>America/New_York</option><option>Asia/Dubai</option></select></label>
+                <label>Company Size<select name="companySize"><option value="">Company Size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–1000 employees</option><option>1000+ employees</option></select></label>
+                <label>Industry<select name="industry"><option value="">Industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Retail</option><option>Manufacturing</option><option>Other</option></select></label>
+                <div class="toggle-field"><span>Enable Email Notification</span><label class="switch"><input type="checkbox" name="emailNotifications" checked><span class="slider"></span><span class="switch-state">ON</span></label></div>
+              </div>
+              <div class="actions"><button class="btn" type="submit">Save Changes</button></div>
+              <p class="form-message" id="generalMessage" role="status"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel settings-panel searchable" data-search="notification preferences dashboard alerts report updates sms notification">
+          <button class="section-heading" data-collapse="notificationBody" aria-expanded="true"><span><strong>Notification Preferences</strong><small>Configure how and when you receive notifications.</small></span><span class="chevron">⌄</span></button>
+          <div id="notificationBody" class="section-body">
+            <form id="notificationForm">
+              <div class="form-grid notification-grid">
+                <label>Dashboard Alerts<select name="dashboardAlerts"><option>All Alerts</option><option>Important Only</option><option>None</option></select></label>
+                <label>Report Updates<select name="reportUpdates"><option>Daily</option><option>Weekly</option><option>Monthly</option><option>Never</option></select></label>
+                <div class="toggle-field"><span>Enable SMS Notification</span><label class="switch"><input type="checkbox" name="smsNotifications" checked><span class="slider"></span><span class="switch-state">ON</span></label></div>
+              </div>
+              <div class="actions"><button class="btn" type="submit">Update Preferences</button></div>
+              <p class="form-message" id="notificationMessage" role="status"></p>
+            </form>
+          </div>
+        </section>
+
+        <div class="two-column">
+          <section class="panel searchable" data-search="integrations salesforce crm google analytics stack microsoft teams connect disconnect">
+            <h2 class="card-title">Integrations</h2><p class="card-subtitle">Connect and manage third-party integrations.</p>
+            <div class="table-wrap"><table><thead><tr><th>Integration</th><th>Status</th><th>Action</th></tr></thead><tbody id="integrationsRows"></tbody></table></div>
+            <p class="form-message" id="integrationMessage" role="status"></p>
+          </section>
+          <section class="panel searchable" data-search="security change password two factor authentication 2fa">
+            <h2 class="card-title">Security</h2><p class="card-subtitle">Manage security settings for your organization.</p>
+            <form id="securityForm">
+              <label class="password-label">Change Password<div class="password-row"><input id="passwordInput" type="password" value="StrongPassword123!" minlength="8" aria-label="New password"><button class="btn" type="button" id="showPassword">Show</button><button class="btn" type="submit">Change Password</button></div></label>
+              <div class="toggle-field security-toggle"><span>Two-Factor Authentication (2FA)</span><label class="switch"><input type="checkbox" name="twoFactor" checked><span class="slider"></span><span class="switch-state">ON</span></label></div>
+              <div class="actions"><button class="btn" type="submit">Save Security Settings</button></div>
+              <p class="form-message" id="securityMessage" role="status"></p>
+            </form>
+          </section>
+        </div>
+
+        <section class="panel searchable roles-panel" data-search="role permissions admin business analyst editor viewer roles overview permission matrix">
+          <button class="section-heading" data-collapse="rolesBody" aria-expanded="true"><span><strong>Role &amp; Permissions</strong><small>Manage roles and permissions for your organization.</small></span><span class="chevron">⌄</span></button>
+          <div id="rolesBody" class="section-body">
+            <div class="tabs" role="tablist" aria-label="Role views"><button class="tab active" role="tab" aria-selected="true" data-tab="overview">Roles Overview</button><button class="tab" role="tab" aria-selected="false" data-tab="matrix">Permission Matrix</button></div>
+            <div class="table-wrap"><table id="rolesTable"><thead id="rolesHead"></thead><tbody id="rolesRows"></tbody></table></div>
+            <div class="table-footer"><span id="pageInfo">Showing 1 to 4 of 4 roles</span><div class="pagination" id="pagination"></div></div>
+          </div>
+        </section>
+        <footer class="footer"><span>© 2026 EDABIP. All rights reserved. Enterprise Data Analytics &amp; Business Intelligence Platform</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Help &amp; Support</a> &nbsp; v2.1.0</span></footer>
+      </main>
+    </div>
+    <button class="floating-ai" id="floatingAi" aria-label="Ask AI assistant">∿</button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
