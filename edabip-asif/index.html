@@ -96,17 +96,34 @@
       <header class="topbar">
         <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
         <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="Search" aria-label="Search settings"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label>
-        <div class="top-actions"><button class="icon-button" id="notificationsBtn" aria-label="Notifications" title="Notifications">♧<span class="notification-dot"></span></button><button class="avatar" id="profileBtn" aria-label="Open profile menu">∿</button></div>
+        <div class="top-actions"><button class="icon-button theme-button" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark theme">☾</button><button class="icon-button" id="notificationsBtn" aria-label="Notifications" title="Notifications">♧<span class="notification-dot"></span></button><button class="avatar" id="profileBtn" aria-label="Open profile menu">∿</button></div>
       </header>
 
       <main class="content">
         <h1>Setting</h1>
-        <section class="welcome panel">
+        <section class="workspace-hero panel">
+    <div><span class="eyebrow">WORKSPACE CONTROL CENTER</span><h2>Settings</h2><p>Manage your workspace, integrations, security and access from one place.</p></div>
+    <span class="system-pill"><span></span> All systems operational</span>
+  </section>
+  <section class="overview-grid">
+    <article class="metric-card"><span class="metric-icon">◌</span><div><small>PROFILE COMPLETION</small><strong>82%</strong><em>Almost there</em></div></article>
+    <article class="metric-card"><span class="metric-icon">⌘</span><div><small>CONNECTED SERVICES</small><strong id="connectedCount">4</strong><em>Integrations active</em></div></article>
+    <article class="metric-card"><span class="metric-icon">✓</span><div><small>SECURITY SCORE</small><strong>92/100</strong><em>Strong protection</em></div></article>
+    <article class="metric-card"><span class="metric-icon">◷</span><div><small>LAST ACTIVITY</small><strong>11:42</strong><em>Today</em></div></article>
+  </section>
+  <section class="welcome panel">
           <div><h2>Welcome Back, Alin!</h2><p>Stay Organised with real time insight, Monitor Your Business Performance and key Metrics.</p></div>
           <span class="live-pill"><span></span> Real Time</span>
         </section>
 
-        <section class="panel settings-panel searchable" data-search="general settings first name last name email mobile number application name timezone company size industry email notification">
+        <div class="settings-nav panel" aria-label="Settings navigation">
+    <button class="settings-nav-item active" data-target="generalBody">General</button>
+    <button class="settings-nav-item" data-target="notificationBody">Notifications</button>
+    <button class="settings-nav-item" data-target="integrationsRows">Integrations</button>
+    <button class="settings-nav-item" data-target="securityForm">Security</button>
+    <button class="settings-nav-item" data-target="rolesBody">Roles &amp; Permissions</button>
+  </div>
+  <section class="panel settings-panel searchable" data-search="general settings first name last name email mobile number application name timezone company size industry email notification">
           <button class="section-heading" data-collapse="generalBody" aria-expanded="true"><span><strong>General Settings</strong><small>Configure general application settings.</small></span><span class="chevron">⌄</span></button>
           <div id="generalBody" class="section-body">
             <form id="generalForm">
@@ -167,6 +184,7 @@
             <div class="table-footer"><span id="pageInfo">Showing 1 to 4 of 4 roles</span><div class="pagination" id="pagination"></div></div>
           </div>
         </section>
+        <section class="panel activity-panel"><div><h2 class="card-title">Recent Activity</h2><p class="card-subtitle">Latest changes across your workspace.</p></div><div class="activity-list"><div><span>✓</span><p><b>Security settings updated</b><small>2FA remains enabled · 12 minutes ago</small></p></div><div><span>↗</span><p><b>Microsoft Teams connected</b><small>Integration connected successfully · 1 hour ago</small></p></div><div><span>◉</span><p><b>Profile information changed</b><small>Workspace profile was updated · 3 hours ago</small></p></div></div></section>
         <footer class="footer"><span>© 2026 EDABIP. All rights reserved. Enterprise Data Analytics &amp; Business Intelligence Platform</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Help &amp; Support</a> &nbsp; v2.1.0</span></footer>
       </main>
     </div>
