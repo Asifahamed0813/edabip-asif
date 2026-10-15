@@ -1510,3 +1510,41 @@ html[data-theme="dark"] a {
 html[data-theme="dark"] :focus-visible {
   outline-color: #93a5ff;
 }
+
+
+/* Dark theme coverage for dashboard-specific cards and form feedback. */
+html[data-theme="dark"] .overview-card,
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .security-score,
+html[data-theme="dark"] .security-controls,
+html[data-theme="dark"] .activity-card,
+html[data-theme="dark"] .toggle-card,
+html[data-theme="dark"] .role-stats > div {
+  background-color: #1e293b !important;
+  color: #e5e7eb;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .overview-copy strong,
+html[data-theme="dark"] .overview-copy span,
+html[data-theme="dark"] .overview-copy small,
+html[data-theme="dark"] .section-count,
+html[data-theme="dark"] .form-message {
+  color: #cbd5e1;
+}
+
+.form-message[data-state="error"] {
+  color: #b42318;
+}
+
+html[data-theme="dark"] .form-message[data-state="error"] {
+  color: #fda29b;
+}
+
+.form-message[data-state="success"] {
+  color: #16803d;
+}
+
+html[data-theme="dark"] .form-message[data-state="success"] {
+  color: #86efac;
+}
