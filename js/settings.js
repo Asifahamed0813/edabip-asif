@@ -161,7 +161,15 @@ function setupSecurityForm() {
     }
 
     // Passwords are validated but deliberately never stored in localStorage.
-    form.reset();
+    if (form.elements.passwordInput) {
+      form.elements.passwordInput.value = "";
+      form.elements.passwordInput.type = "password";
+    }
+    const showPasswordButton = document.querySelector("#showPassword");
+    if (showPasswordButton) {
+      showPasswordButton.textContent = "Show";
+      showPasswordButton.setAttribute("aria-pressed", "false");
+    }
     updateSwitchLabel(form.elements.twoFactor);
     setMessage(
       "#securityMessage",
