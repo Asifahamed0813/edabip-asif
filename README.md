@@ -48,6 +48,7 @@ edabip-asif/
 - `js/storage.js` — saves and restores integration states using `localStorage` with `try/catch`.
 - `js/roles.js` — renders the roles overview and permission matrix, pagination, and saved permission changes.
 - `js/validators.js` — reusable validation helpers for required fields, email, Indian mobile number, and password checks.
+- `js/settings.js` — validates and persists General Settings, notification preferences, and 2FA settings; password values are never stored.
 - `data/*.json` — sample integration and role data, kept outside the JavaScript modules.
 - `assets/` — place project screenshots and other UI assets here.
 
@@ -79,4 +80,4 @@ Keeping the page working while splitting the original JavaScript into separate m
 
 ## Next step
 
-Finish wiring the reusable validators to the General Settings, Notifications, and Change Password forms, and persist those form settings. Add a fresh screenshot of the completed interface to `assets/` before final submission.
+The form validation and local persistence are now wired for General Settings, Notifications, and 2FA. Test these flows in the browser and add a fresh screenshot of the completed interface to `assets/` before final submission.
