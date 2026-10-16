@@ -1548,3 +1548,37 @@ html[data-theme="dark"] .form-message[data-state="error"] {
 html[data-theme="dark"] .form-message[data-state="success"] {
   color: #86efac;
 }
+
+
+/* Day 2: password form fields follow the existing settings input style. */
+.security-controls form > label {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.security-controls form > label .password-row {
+  margin-top: 7px;
+}
+
+.security-controls .password-row input {
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+}
+
+.permission-save-controls [data-state="pending"] {
+  color: var(--amber, #b7791f);
+}
+
+.permission-save-controls [data-state="error"] {
+  color: #b42318;
+}

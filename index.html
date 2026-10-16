@@ -35,94 +35,97 @@
 <button class="icon-button" id="notificationsBtn" type="button" title="Notifications" aria-label="Notifications">♧<i></i></button>
 <button class="avatar" id="profileBtn" type="button" aria-label="Open profile menu">A</button>
 </div>
-    </header>
+</header>
 
-    <main class="content">
-      
-<div id="dataStatus" role="status" aria-live="polite">
-  Loading settings...
-</div>
+<main class="content">
+<div id="dataStatus" role="status" aria-live="polite">Loading settings...</div>
+<section class="hero searchable" data-search="settings workspace profile notifications integrations security roles">
+<div><span class="eyebrow">WORKSPACE CONTROL CENTER</span><h1>Settings</h1><p>Shape your EDABIP workspace, notifications, connections and access in one place.</p></div>
+<div class="hero-status"><span class="status-dot"></span><div><strong>All systems operational</strong><small>Good afternoon, Alin</small></div></div>
+</section>
 
-      <section class="hero searchable" data-search="settings workspace profile notifications integrations security roles">
-        <div><span class="eyebrow">WORKSPACE CONTROL CENTER</span><h1>Settings</h1><p>Shape your EDABIP workspace, notifications, connections and access in one place.</p></div>
-        <div class="hero-status"><span class="status-dot"></span><div><strong>All systems operational</strong><small>Good afternoon, Alin</small></div></div>
-      </section>
+<section class="overview-grid searchable" data-search="overview profile complete integrations security score activity">
+<div class="overview-card profile-progress"><div class="overview-icon">◎</div><div class="overview-copy"><span>PROFILE COMPLETION</span><strong>82%</strong><small>Keep your workspace details up to date</small><div class="progress"><i style="width:82%"></i></div></div></div>
+<div class="overview-card"><div class="overview-icon green">⌘</div><div class="overview-copy"><span>CONNECTED SERVICES</span><strong id="connectedCount">3</strong><small>Integrations working with EDABIP</small></div></div>
+<div class="overview-card"><div class="overview-icon purple">✓</div><div class="overview-copy"><span>SECURITY SCORE</span><strong>92<span>/100</span></strong><small>Excellent protection</small></div></div>
+<div class="overview-card"><div class="overview-icon amber">◷</div><div class="overview-copy"><span>LAST ACTIVITY</span><strong>11:42</strong><small>Today · Password updated</small></div></div>
+</section>
 
-      <section class="overview-grid searchable" data-search="overview profile complete integrations security score activity">
-        <div class="overview-card profile-progress"><div class="overview-icon">◎</div><div class="overview-copy"><span>PROFILE COMPLETION</span><strong>82%</strong><small>Keep your workspace details up to date</small><div class="progress"><i style="width:82%"></i></div></div></div>
-        <div class="overview-card"><div class="overview-icon green">⌘</div><div class="overview-copy"><span>CONNECTED SERVICES</span><strong id="connectedCount">4</strong><small>Integrations working with EDABIP</small></div></div>
-        <div class="overview-card"><div class="overview-icon purple">✓</div><div class="overview-copy"><span>SECURITY SCORE</span><strong>92<span>/100</span></strong><small>Excellent protection</small></div></div>
-        <div class="overview-card"><div class="overview-icon amber">◷</div><div class="overview-copy"><span>LAST ACTIVITY</span><strong>11:42</strong><small>Today · Password updated</small></div></div>
-      </section>
-
-      <div class="settings-layout">
-        <aside class="settings-nav" aria-label="Settings sections">
-          <span class="settings-nav-title">SETTINGS</span>
-          <a class="current" href="#general">01 <span>General</span></a>
-          <a href="#notifications">02 <span>Notifications</span></a>
-          <a href="#integrations">03 <span>Integrations</span></a>
-          <a href="#security">04 <span>Security</span></a>
-          <a href="#roles">05 <span>Roles & Permissions</span></a>
-          <a href="#activity">06 <span>Activity</span></a>
-        </aside>
+<div class="settings-layout">
+<aside class="settings-nav" aria-label="Settings sections">
+<span class="settings-nav-title">SETTINGS</span>
+<a class="current" href="#general">01 <span>General</span></a>
+<a href="#notifications">02 <span>Notifications</span></a>
+<a href="#integrations">03 <span>Integrations</span></a>
+<a href="#security">04 <span>Security</span></a>
+<a href="#roles">05 <span>Roles &amp; Permissions</span></a>
+<a href="#activity">06 <span>Activity</span></a>
+</aside>
 
 <div class="settings-content">
 <section class="section-block searchable" id="general" data-search="general first name last name email mobile application timezone company industry profile">
 <div class="section-title"><div><span class="eyebrow">01 · GENERAL</span><h2>Your workspace, your rules.</h2><p>Keep your workspace identity and business details accurate.</p></div><span class="section-count">Profile · 82%</span></div>
 <div class="card profile-card">
- <form id="generalForm">
-                <div class="form-grid">
-                  <label>First name<input name="firstName" placeholder="Enter first name" required></label>
-                  <label>Last name<input name="lastName" placeholder="Enter last name" required></label>
-                  <label>Email<input name="email" type="email" placeholder="name@company.com" required></label>
-                  <label>Mobile number<input name="mobile" type="tel" placeholder="+91 00000 00000"></label>
-                  <label>Application name<input name="appName" value="EDABIP"></label>
-                  <label>Timezone<select name="timezone"><option>UTC (Coordinated Universal Time)</option><option>Asia/Kolkata (IST)</option><option>Europe/London</option><option>America/New_York</option></select></label>
-                  <label>Company size<select name="companySize"><option value="">Choose company size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–1000 employees</option></select></label>
-                  <label>Industry<select name="industry"><option value="">Choose industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Retail</option></select></label>
-                  <div class="toggle-card"><div><strong>Email notifications</strong><small>Receive important workspace updates.</small></div><label class="switch"><input type="checkbox" name="emailNotifications" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
-                </div>
-                <div class="form-actions"><span class="form-message" id="generalMessage" role="status" aria-live="polite"></span><button class="primary-btn" type="submit">Save profile <span>→</span></button></div>
-              </form>
-            </div>
-          </section>
+<form id="generalForm">
+<div class="form-grid">
+<label>First name<input name="firstName" placeholder="Enter first name" autocomplete="given-name" required></label>
+<label>Last name<input name="lastName" placeholder="Enter last name" autocomplete="family-name" required></label>
+<label>Email<input name="email" type="email" placeholder="name@company.com" autocomplete="email" required></label>
+<label>Mobile number<input name="mobile" type="tel" inputmode="tel" placeholder="+91 00000 00000" autocomplete="tel"></label>
+<label>Application name<input name="appName" value="EDABIP" required></label>
+<label>Timezone<select name="timezone"><option>UTC (Coordinated Universal Time)</option><option>Asia/Kolkata (IST)</option><option>Europe/London</option><option>America/New_York</option></select></label>
+<label>Company size<select name="companySize" required><option value="">Choose company size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–1000 employees</option></select></label>
+<label>Industry<select name="industry" required><option value="">Choose industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Retail</option></select></label>
+<div class="toggle-card"><div><strong>Email notifications</strong><small>Receive important workspace updates.</small></div><label class="switch"><input type="checkbox" name="emailNotifications" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
+</div>
+<div class="form-actions"><span class="form-message" id="generalMessage" role="status" aria-live="polite"></span><button class="primary-btn" type="submit">Save Changes <span>→</span></button></div>
+</form>
+</div>
+</section>
 
-          <section class="section-block searchable" id="notifications" data-search="notifications dashboard alerts report updates sms preferences">
-            <div class="section-title"><div><span class="eyebrow">02 · NOTIFICATIONS</span><h2>Stay informed, not interrupted.</h2><p>Choose what reaches you and how often.</p></div></div>
-            <div class="card preference-card"><form id="notificationForm">
-              <div class="preference-row"><span class="pref-icon">!</span><div><strong>Dashboard alerts</strong><small>How much activity should reach you?</small></div><select name="dashboardAlerts"><option>All alerts</option><option>Important only</option><option>None</option></select></div>
-              <div class="preference-row"><span class="pref-icon">◷</span><div><strong>Report updates</strong><small>Choose your report delivery rhythm.</small></div><select name="reportUpdates"><option>Daily</option><option>Weekly</option><option>Monthly</option><option>Never</option></select></div>
-              <div class="preference-row"><span class="pref-icon">⌁</span><div><strong>SMS notifications</strong><small>Get critical alerts on your phone.</small></div><label class="switch"><input type="checkbox" name="smsNotifications" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
-              <div class="form-actions"><span class="form-message" id="notificationMessage" role="status" aria-live="polite"></span><button class="soft-btn" type="submit">Update preferences</button></div>
-            </form></div>
-          </section>
+<section class="section-block searchable" id="notifications" data-search="notifications dashboard alerts report updates sms preferences">
+<div class="section-title"><div><span class="eyebrow">02 · NOTIFICATIONS</span><h2>Stay informed, not interrupted.</h2><p>Choose what reaches you and how often.</p></div></div>
+<div class="card preference-card"><form id="notificationForm">
+<div class="preference-row"><span class="pref-icon">!</span><div><strong>Dashboard alerts</strong><small>How much activity should reach you?</small></div><select name="dashboardAlerts"><option>All alerts</option><option>Important only</option><option>None</option></select></div>
+<div class="preference-row"><span class="pref-icon">◷</span><div><strong>Report updates</strong><small>Choose your report delivery rhythm.</small></div><select name="reportUpdates"><option>Daily</option><option>Weekly</option><option>Monthly</option><option>Never</option></select></div>
+<div class="preference-row"><span class="pref-icon">⌁</span><div><strong>SMS notifications</strong><small>Get critical alerts on your phone.</small></div><label class="switch"><input type="checkbox" name="smsNotifications" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
+<div class="form-actions"><span class="form-message" id="notificationMessage" role="status" aria-live="polite"></span><button class="soft-btn" type="submit">Save notification settings</button></div>
+</form></div>
+</section>
 
-          <section class="section-block searchable" id="integrations" data-search="integrations salesforce google analytics slack microsoft teams connect disconnect services">
-            <div class="section-title"><div><span class="eyebrow">03 · CONNECTED SERVICES</span><h2>Tools that work together.</h2><p>Connect the services your team uses every day.</p></div><span class="section-count" id="integrationCountLabel">4 connected</span></div>
-            <div class="integration-grid" id="integrationCards"></div><p class="form-message" id="integrationMessage"></p>
-          </section>
+<section class="section-block searchable" id="integrations" data-search="integrations salesforce google analytics slack microsoft teams connect disconnect services">
+<div class="section-title"><div><span class="eyebrow">03 · CONNECTED SERVICES</span><h2>Tools that work together.</h2><p>Connect the services your team uses every day.</p></div><span class="section-count" id="integrationCountLabel">Loading integrations…</span></div>
+<div class="integration-grid" id="integrationCards"></div><p class="form-message" id="integrationMessage" role="status" aria-live="polite"></p>
+</section>
 
-          <section class="section-block searchable" id="security" data-search="security password two factor authentication 2fa security score recovery">
-            <div class="section-title"><div><span class="eyebrow">04 · SECURITY</span><h2>Protection without the friction.</h2><p>Manage your password, two-factor authentication and recovery options.</p></div></div>
-            <div class="security-grid">
-              <div class="card security-score"><div class="score-ring"><span>92</span><small>/100</small></div><div><span class="eyebrow">SECURITY SCORE</span><h3>Excellent</h3><p>Your workspace has strong baseline protection.</p></div><button class="soft-btn" id="improveSecurity">Improve security</button></div>
-              <div class="card security-controls"><form id="securityForm"><label>Change password<div class="password-row"><input id="passwordInput" type="password" placeholder="Enter a new password (optional)" minlength="8" autocomplete="new-password" aria-describedby="securityMessage"><button class="ghost-btn" type="button" id="showPassword" aria-pressed="false">Show</button></div></label><div class="security-toggle-row"><div><strong>Two-factor authentication</strong><small>Require an extra verification step when signing in.</small></div><label class="switch"><input type="checkbox" name="twoFactor" checked><span class="slider"></span><b class="switch-state">ON</b></label></div><div class="form-actions"><span class="form-message" id="securityMessage" role="status" aria-live="polite"></span><button class="primary-btn" type="submit">Save security <span>→</span></button></div></form></div>
-            </div>
-          </section>
+<section class="section-block searchable" id="security" data-search="security password two factor authentication 2fa security score recovery">
+<div class="section-title"><div><span class="eyebrow">04 · SECURITY</span><h2>Protection without the friction.</h2><p>Manage your password, two-factor authentication and recovery options.</p></div></div>
+<div class="security-grid">
+<div class="card security-score"><div class="score-ring"><span>92</span><small>/100</small></div><div><span class="eyebrow">SECURITY SCORE</span><h3>Excellent</h3><p>Your workspace has strong baseline protection.</p></div><button class="soft-btn" id="improveSecurity" type="button">Improve security</button></div>
+<div class="card security-controls"><form id="securityForm">
+<label>Current password<div class="password-row"><input id="currentPasswordInput" name="currentPassword" type="password" placeholder="Enter current password" autocomplete="current-password" aria-describedby="securityMessage"><button class="ghost-btn password-visibility" type="button" data-target="currentPasswordInput" aria-pressed="false">Show</button></div></label>
+<label>New password<div class="password-row"><input id="passwordInput" name="newPassword" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" aria-describedby="securityMessage"><button class="ghost-btn password-visibility" type="button" data-target="passwordInput" aria-pressed="false">Show</button></div></label>
+<label>Confirm new password<div class="password-row"><input id="confirmPasswordInput" name="confirmPassword" type="password" placeholder="Re-enter new password" autocomplete="new-password" aria-describedby="securityMessage"><button class="ghost-btn password-visibility" type="button" data-target="confirmPasswordInput" aria-pressed="false">Show</button></div></label>
+<div class="security-toggle-row"><div><strong>Two-factor authentication</strong><small>Require an extra verification step when signing in.</small></div><label class="switch"><input type="checkbox" name="twoFactor" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
+<div class="form-actions"><span class="form-message" id="securityMessage" role="status" aria-live="polite"></span><button class="primary-btn" type="submit">Save security <span>→</span></button></div>
+</form></div>
+</div>
+</section>
 
-          <section class="section-block searchable" id="roles" data-search="roles permissions admin analyst editor viewer matrix users">
-            <div class="section-title"><div><span class="eyebrow">05 · ACCESS CONTROL</span><h2>Roles built for your team.</h2><p>Review who can access what across your workspace.</p></div></div>
-            <div class="role-stats"><div><strong>5</strong><span>Admins</span></div><div><strong>18</strong><span>Analysts</span></div><div><strong>32</strong><span>Editors</span></div><div><strong>120</strong><span>Viewers</span></div></div>
-            <div class="card roles-card"><div class="tabs" role="tablist" aria-label="Role views"><button class="tab active" id="rolesOverviewTab" type="button" role="tab" aria-controls="rolesPanel" aria-selected="true" tabindex="0" data-tab="overview">Roles overview</button><button class="tab" id="rolesMatrixTab" type="button" role="tab" aria-controls="rolesPanel" aria-selected="false" tabindex="-1" data-tab="matrix">Permission matrix</button></div><div class="table-wrap" id="rolesPanel" role="tabpanel" aria-labelledby="rolesOverviewTab" tabindex="0"><table><thead id="rolesHead"></thead><tbody id="rolesRows"></tbody></table></div><div class="table-footer"><span id="pageInfo"></span><div class="pagination" id="pagination"></div></div></div>
-          </section>
+<section class="section-block searchable" id="roles" data-search="roles permissions admin analyst editor viewer matrix users">
+<div class="section-title"><div><span class="eyebrow">05 · ACCESS CONTROL</span><h2>Roles built for your team.</h2><p>Review who can access what across your workspace.</p></div></div>
+<div class="role-stats"><div><strong>5</strong><span>Admins</span></div><div><strong>18</strong><span>Analysts</span></div><div><strong>32</strong><span>Editors</span></div><div><strong>120</strong><span>Viewers</span></div></div>
+<div class="card roles-card"><div class="tabs" role="tablist" aria-label="Role views"><button class="tab active" id="rolesOverviewTab" type="button" role="tab" aria-controls="rolesPanel" aria-selected="true" tabindex="0" data-tab="overview">Roles overview</button><button class="tab" id="rolesMatrixTab" type="button" role="tab" aria-controls="rolesPanel" aria-selected="false" tabindex="-1" data-tab="matrix">Permission matrix</button></div><div class="table-wrap" id="rolesPanel" role="tabpanel" aria-labelledby="rolesOverviewTab" tabindex="0"><table><thead id="rolesHead"></thead><tbody id="rolesRows"></tbody></table></div><div class="table-footer"><span id="pageInfo"></span><div class="pagination" id="pagination"></div></div></div>
+</section>
+
 <section class="section-block searchable" id="activity" data-search="activity recent password integration connected preferences">
-<div class="section-title"><div><span class="eyebrow">06 · RECENT ACTIVITY</span><h2>What changed lately.</h2><p>A quick audit trail of important workspace actions.</p></div><button class="soft-btn" id="viewActivity">View all activity</button></div>
+<div class="section-title"><div><span class="eyebrow">06 · RECENT ACTIVITY</span><h2>What changed lately.</h2><p>A quick audit trail of important workspace actions.</p></div><button class="soft-btn" id="viewActivity" type="button">View all activity</button></div>
 <div class="card activity-card">
 <div class="activity-row"><span class="activity-dot green"></span><div><strong>Password changed</strong><small>Today · 08:08 AM</small></div><span>Security</span></div>
 <div class="activity-row"><span class="activity-dot purple"></span><div><strong>Slack integration connected</strong><small>Today · 10:18 AM</small></div><span>Integrations</span></div>
 <div class="activity-row"><span class="activity-dot blue"></span><div><strong>Notification preferences updated</strong><small>Yesterday · 4:32 PM</small></div><span>Preferences</span></div>
 <div class="activity-row"><span class="activity-dot amber"></span><div><strong>Viewer role reviewed</strong><small>Yesterday · 2:10 PM</small></div><span>Access</span></div>
- </div>
+</div>
 </section>
 </div>
 </div>
