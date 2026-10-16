@@ -2,6 +2,7 @@ const STORAGE_KEY = "edabip-role-permissions";
 const PAGE_SIZE = 3;
 
 let rolesData = [];
+let permissionCatalog = [];
 let currentPage = 1;
 let activeTab = "overview";
 let pendingPermissions = {};
@@ -31,9 +32,8 @@ function getPermissions(role) {
 }
 
 function getAllPermissions() {
-  return [...new Set(
-    rolesData.flatMap((role) => getPermissions(role))
-  )].sort();
+  // Keep every known permission visible, even when it is unchecked for all roles.
+  return [...permissionCatalog].sort();
 }
 
 function createCell(text, tag = "td") {
@@ -223,6 +223,11 @@ export function setupRoles(roles) {
   }
 
   const stored = loadSavedPermissions();
+  const storedPermissions = Object.values(stored).filter(Array.isArray).flat();
+  permissionCatalog = [...new Set([
+    ...roles.flatMap((role) => role.permissions),
+    ...storedPermissions
+  ])];
   rolesData = roles.map((role) => ({
     ...role,
     permissions: Array.isArray(stored[role.name]) ? stored[role.name] : role.permissions
