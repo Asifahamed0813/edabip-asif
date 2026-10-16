@@ -2,7 +2,6 @@ import { loadDashboardData } from "./data.js";
 import { showStatus, renderIntegrations } from "./render.js";
 import { setupIntegrationEvents } from "./events.js";
 import { setupRoles } from "./roles.js";
-import { setupSettingsForms } from "./settings.js";
 
 function setupThemeToggle() {
   const themeToggle = document.querySelector("#themeToggle");
@@ -42,7 +41,6 @@ async function startApp() {
   }
 
   setupThemeToggle();
-  setupSettingsForms();
 
   try {
     const data = await loadDashboardData();
