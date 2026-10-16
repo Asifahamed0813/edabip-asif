@@ -31,7 +31,7 @@ function saveSettings(key, settings) {
 function getFormValues(form) {
   const values = {};
   for (const element of form.elements) {
-    if (!element.name || element.type === "password" || element.type === "submit") {
+    if (!element.name || element.type === "password" || element.type === "submit" || element.type === "button") {
       continue;
     }
     values[element.name] = element.type === "checkbox"
@@ -46,10 +46,12 @@ function applySavedValues(form, values) {
 
   for (const element of form.elements) {
     if (!element.name || !(element.name in values)) continue;
-
     if (element.type === "checkbox") {
       element.checked = Boolean(values[element.name]);
       updateSwitchLabel(element);
+    } else if (element.tagName === "SELECT") {
+      const hasOption = [...element.options].some((option) => option.value === values[element.name]);
+      if (hasOption) element.value = values[element.name];
     } else {
       element.value = values[element.name];
     }
@@ -64,7 +66,6 @@ function updateSwitchLabel(input) {
 function setMessage(id, message, isError = false) {
   const element = document.querySelector(id);
   if (!element) return;
-
   element.textContent = message;
   element.dataset.state = isError ? "error" : "success";
 }
@@ -74,21 +75,18 @@ function setupProfileForm() {
   if (!form) return;
 
   applySavedValues(form, readSettings(PROFILE_KEY));
-
   form.querySelectorAll('input[type="checkbox"]').forEach(updateSwitchLabel);
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const values = getFormValues(form);
     if (!form.reportValidity()) return;
 
+    const values = getFormValues(form);
     if (!isValidEmail(values.email)) {
       setMessage("#generalMessage", "Enter a valid email address.", true);
       form.elements.email.focus();
       return;
     }
-
     if (values.mobile && !isValidMobile(values.mobile)) {
       setMessage("#generalMessage", "Enter a valid 10-digit Indian mobile number.", true);
       form.elements.mobile.focus();
@@ -110,14 +108,12 @@ function setupNotificationForm() {
 
   applySavedValues(form, readSettings(NOTIFICATION_KEY));
   form.querySelectorAll('input[type="checkbox"]').forEach(updateSwitchLabel);
-
   form.addEventListener("change", (event) => {
     if (event.target.type === "checkbox") updateSwitchLabel(event.target);
   });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
     const saved = saveSettings(NOTIFICATION_KEY, getFormValues(form));
     setMessage(
       "#notificationMessage",
@@ -144,37 +140,55 @@ function setupSecurityForm() {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const password = form.elements.passwordInput?.value ?? "";
-    if (password && !isValidPassword(password)) {
-      setMessage("#securityMessage", "Password must be at least 8 characters long.", true);
-      form.elements.passwordInput.focus();
-      return;
+    const currentPassword = form.elements.currentPassword.value;
+    const newPassword = form.elements.newPassword.value;
+    const confirmPassword = form.elements.confirmPassword.value;
+
+    if (newPassword || confirmPassword || currentPassword) {
+      if (!currentPassword) {
+        setMessage("#securityMessage", "Enter your current password first.", true);
+        form.elements.currentPassword.focus();
+        return;
+      }
+      if (!isValidPassword(newPassword)) {
+        setMessage("#securityMessage", "New password must be at least 8 characters long.", true);
+        form.elements.newPassword.focus();
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        setMessage("#securityMessage", "New password and confirmation do not match.", true);
+        form.elements.confirmPassword.focus();
+        return;
+      }
+      if (currentPassword === newPassword) {
+        setMessage("#securityMessage", "Choose a new password different from the current password.", true);
+        form.elements.newPassword.focus();
+        return;
+      }
     }
 
     const didSave = saveSettings(SECURITY_KEY, {
       twoFactor: form.elements.twoFactor.checked
     });
-
     if (!didSave) {
       setMessage("#securityMessage", "Could not save security settings. Check browser storage.", true);
       return;
     }
 
-    // Passwords are validated but deliberately never stored in localStorage.
-    if (form.elements.passwordInput) {
-      form.elements.passwordInput.value = "";
-      form.elements.passwordInput.type = "password";
-    }
-    const showPasswordButton = document.querySelector("#showPassword");
-    if (showPasswordButton) {
-      showPasswordButton.textContent = "Show";
-      showPasswordButton.setAttribute("aria-pressed", "false");
-    }
-    updateSwitchLabel(form.elements.twoFactor);
+    // This is a front-end demo: never store current, new, or confirmation passwords.
+    form.elements.currentPassword.value = "";
+    form.elements.newPassword.value = "";
+    form.elements.confirmPassword.value = "";
+    form.querySelectorAll(".password-visibility").forEach((button) => {
+      const input = document.getElementById(button.dataset.target);
+      if (input) input.type = "password";
+      button.textContent = "Show";
+      button.setAttribute("aria-pressed", "false");
+    });
     setMessage(
       "#securityMessage",
-      password
-        ? "Security settings saved. Demo password was not stored."
+      newPassword
+        ? "Security settings saved. Demo password values were not stored."
         : "Security settings saved.",
       false
     );
@@ -182,15 +196,15 @@ function setupSecurityForm() {
 }
 
 function setupPasswordVisibility() {
-  const input = document.querySelector("#passwordInput");
-  const button = document.querySelector("#showPassword");
-  if (!input || !button) return;
-
-  button.addEventListener("click", () => {
-    const show = input.type === "password";
-    input.type = show ? "text" : "password";
-    button.textContent = show ? "Hide" : "Show";
-    button.setAttribute("aria-pressed", String(show));
+  document.querySelectorAll(".password-visibility").forEach((button) => {
+    button.addEventListener("click", () => {
+      const input = document.getElementById(button.dataset.target);
+      if (!input) return;
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      button.textContent = show ? "Hide" : "Show";
+      button.setAttribute("aria-pressed", String(show));
+    });
   });
 }
 
