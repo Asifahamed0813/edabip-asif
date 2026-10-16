@@ -74,8 +74,8 @@
 <label>Mobile number<input name="mobile" type="tel" inputmode="tel" placeholder="+91 00000 00000" autocomplete="tel"></label>
 <label>Application name<input name="appName" value="EDABIP" required></label>
 <label>Timezone<select name="timezone"><option>UTC (Coordinated Universal Time)</option><option>Asia/Kolkata (IST)</option><option>Europe/London</option><option>America/New_York</option></select></label>
-<label>Company size<select name="companySize"><option value="">Choose company size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–1000 employees</option></select></label>
-<label>Industry<select name="industry"><option value="">Choose industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Retail</option></select></label>
+<label>Company size<select name="companySize" required><option value="">Choose company size</option><option>1–10 employees</option><option>11–50 employees</option><option>51–200 employees</option><option>201–1000 employees</option></select></label>
+<label>Industry<select name="industry" required><option value="">Choose industry</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Retail</option></select></label>
 <div class="toggle-card"><div><strong>Email notifications</strong><small>Receive important workspace updates.</small></div><label class="switch"><input type="checkbox" name="emailNotifications" checked><span class="slider"></span><b class="switch-state">ON</b></label></div>
 </div>
 <div class="form-actions"><span class="form-message" id="generalMessage" role="status" aria-live="polite"></span><button class="primary-btn" type="submit">Save Changes <span>→</span></button></div>
