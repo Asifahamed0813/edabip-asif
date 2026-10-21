@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Salesforce CRM", "active": true },
+  { "id": 2, "name": "Google Analytics", "active": false },
+  { "id": 3, "name": "Stack", "active": true },
+  { "id": 4, "name": "Microsoft Teams", "active": true }
+]
