@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "users": 5,
+    "description": "Full access to workspace settings",
+    "permissions": ["Users", "Settings", "Reports", "Billing"]
+  },
+  {
+    "id": 2,
+    "name": "Business Analyst",
+    "users": 18,
+    "description": "Access to analytics and reports",
+    "permissions": ["Analytics", "Reports", "Dashboards"]
+  },
+  {
+    "id": 3,
+    "name": "Editor",
+    "users": 32,
+    "description": "Can edit reports and dashboards",
+    "permissions": ["Reports", "Dashboards"]
+  },
+  {
+    "id": 4,
+    "name": "Viewer",
+    "users": 120,
+    "description": "View-only access to reports",
+    "permissions": ["View reports", "View dashboards"]
+  }
+]
